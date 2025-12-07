@@ -55,7 +55,7 @@ public class GuidelineServiceImp implements GuidelineService {
     public ResponseEntity<?> updateGuideline(String id, MultipartFile image, GuidelineRequestDto guidelineRequestDto) {
         Guideline guideline = guidelineRepository.findById(id).orElseThrow(() -> new RuntimeException("Id not found"));
         String imageUrl = guidelineRequestDto.getImage();
-        if(image != null) {
+        if (image != null) {
             S3Image.delete(guideline.getImage());
             imageUrl = S3Image.upload(image);
             guideline.setImage(imageUrl);
@@ -69,7 +69,7 @@ public class GuidelineServiceImp implements GuidelineService {
 
     @Override
     public ResponseEntity<?> deleteGuideline(String id) {
-        Guideline guideline =guidelineRepository.findById(id).orElseThrow(() -> new RuntimeException("Id not found"));
+        Guideline guideline = guidelineRepository.findById(id).orElseThrow(() -> new RuntimeException("Id not found"));
         S3Image.delete(guideline.getImage());
         guidelineRepository.deleteById(id);
         return ResponseEntity.ok("Image deleted");

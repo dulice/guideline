@@ -1,8 +1,6 @@
 package com.example.guideline.dto;
 
-import com.example.guideline.model.GuidelineStep;
 import com.example.guideline.model.GuidelineTypeEnum;
-import com.example.guideline.model.Step;
 import lombok.Data;
 
 import java.sql.Timestamp;

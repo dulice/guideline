@@ -27,7 +27,7 @@ public class Guideline {
 
     private String image;
 
-    @OneToMany(mappedBy = "guideline", cascade = CascadeType.ALL,  orphanRemoval = true)
+    @OneToMany(mappedBy = "guideline", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<GuidelineStep> steps = new ArrayList<>();
 
     @CreationTimestamp

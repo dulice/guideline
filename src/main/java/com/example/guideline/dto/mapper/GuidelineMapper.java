@@ -28,7 +28,7 @@ public class GuidelineMapper {
 
     private static List<GuidelineStepResponseDto> getGuidelineStepResponseDtos(Guideline guideline) {
         List<GuidelineStepResponseDto> guidelineStepResponseDtoList = new ArrayList<>();
-        for(GuidelineStep step: guideline.getSteps()) {
+        for (GuidelineStep step : guideline.getSteps()) {
             GuidelineStepResponseDto guidelineStepResponseDto = new GuidelineStepResponseDto();
             guidelineStepResponseDto.setNo(step.getNo());
             guidelineStepResponseDto.setTitle(step.getStep().getTitle());

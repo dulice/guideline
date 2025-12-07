@@ -49,7 +49,7 @@ public class StepServiceImp implements StepService {
     public ResponseEntity<?> updateStep(String id, MultipartFile image, StepRequestDto stepRequestDto) {
         Step step = stepRepository.findById(id).orElseThrow(() -> new RuntimeException("Step Not Found"));
         String imageUrl = stepRequestDto.getImage();
-        if(image != null) {
+        if (image != null) {
             S3Image.delete(step.getImage());
             imageUrl = S3Image.upload(image);
         }
